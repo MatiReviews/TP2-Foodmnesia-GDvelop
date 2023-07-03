@@ -5122,38 +5122,6 @@
           "angle": 0,
           "customSize": true,
           "depth": 0,
-          "height": 145,
-          "layer": "",
-          "name": "Play_Button",
-          "persistentUuid": "6943d964-5343-455e-8851-9a8506e67ac2",
-          "width": 237,
-          "x": 553,
-          "y": 237,
-          "zOrder": 3,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 103,
-          "layer": "",
-          "name": "Controls",
-          "persistentUuid": "7c519b6a-8720-4ca3-b5fd-113ad6cae91c",
-          "width": 373,
-          "x": 480,
-          "y": 401,
-          "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
           "height": 127,
           "layer": "",
           "name": "Exit_Button",
@@ -5165,91 +5133,41 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 148,
+          "layer": "",
+          "name": "Play_Button",
+          "persistentUuid": "f93a5fcd-a72d-4a7b-860a-497032e16c99",
+          "width": 241,
+          "x": 555,
+          "y": 222,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 113,
+          "layer": "",
+          "name": "Controls",
+          "persistentUuid": "3d27ec6d-6920-4200-be33-d94565af7afc",
+          "width": 410,
+          "x": 472,
+          "y": 394,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
-        {
-          "assetStoreId": "",
-          "name": "Play_Button",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "play_button.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "assetStoreId": "",
-          "name": "Controls",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "controls_button.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
         {
           "assetStoreId": "",
           "name": "Exit_Button",
@@ -5258,7 +5176,18 @@
           "updateIfNotVisible": false,
           "variables": [],
           "effects": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "name": "ButtonFSM",
+              "type": "ButtonStates::ButtonFSM",
+              "ShouldCheckHovering": true,
+              "State": "Idle",
+              "TouchId": 0,
+              "TouchIsInside": false,
+              "MouseIsInside": false,
+              "Index": 0
+            }
+          ],
           "animations": [
             {
               "name": "",
@@ -5331,9 +5260,193 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Play_Button",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "ButtonFSM",
+              "type": "ButtonStates::ButtonFSM",
+              "ShouldCheckHovering": true,
+              "State": "Idle",
+              "TouchId": 0,
+              "TouchIsInside": false,
+              "MouseIsInside": false,
+              "Index": 0
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "play_button.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Controls",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "ButtonFSM",
+              "type": "ButtonStates::ButtonFSM",
+              "ShouldCheckHovering": true,
+              "State": "Idle",
+              "TouchId": 0,
+              "TouchIsInside": false,
+              "MouseIsInside": false,
+              "Index": 0
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "controls_button.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
-      "events": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ButtonStates::ButtonFSM::IsClicked"
+              },
+              "parameters": [
+                "Play_Button",
+                "ButtonFSM",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Choose Level\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ButtonStates::ButtonFSM::IsClicked"
+              },
+              "parameters": [
+                "Controls",
+                "ButtonFSM",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Options\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ButtonStates::ButtonFSM::IsClicked"
+              },
+              "parameters": [
+                "Exit_Button",
+                "ButtonFSM",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Quit"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ]
+        }
+      ],
       "layers": [
         {
           "ambientLightColorB": 200,
@@ -5363,7 +5476,12 @@
           "effects": []
         }
       ],
-      "behaviorsSharedData": []
+      "behaviorsSharedData": [
+        {
+          "name": "ButtonFSM",
+          "type": "ButtonStates::ButtonFSM"
+        }
+      ]
     },
     {
       "b": 209,
@@ -5652,12 +5770,574 @@
       "stopSoundsOnStartup": true,
       "title": "",
       "v": 209,
-      "uiSettings": {},
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.546875,
+        "windowMask": false
+      },
       "objectsGroups": [],
       "variables": [],
-      "instances": [],
-      "objects": [],
-      "events": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 720,
+          "layer": "",
+          "locked": true,
+          "name": "Title_Background",
+          "persistentUuid": "790e439b-b302-4848-9658-757599dd9eb8",
+          "width": 1280,
+          "x": 0,
+          "y": 1,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "Level_1",
+          "persistentUuid": "658540c9-fd43-46a0-afa5-281fabddffdf",
+          "width": 0,
+          "x": 337,
+          "y": 121,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "Level_2",
+          "persistentUuid": "16c15376-2fcc-4b72-8a8d-8ebeccabf00d",
+          "width": 0,
+          "x": 705,
+          "y": 120,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "Level_3",
+          "persistentUuid": "446a2441-8177-4f46-8c12-805c91f5984d",
+          "width": 0,
+          "x": 335,
+          "y": 385,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "Level_4",
+          "persistentUuid": "f9cbc699-61e1-4bb2-9b7c-2a18004c4467",
+          "width": 0,
+          "x": 709,
+          "y": 383,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "Back",
+          "persistentUuid": "5a00302d-5a30-455d-8dae-a991f22b9f91",
+          "width": 0,
+          "x": 516,
+          "y": 584,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
+          "name": "Level_1",
+          "tags": "",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "ButtonFSM",
+              "type": "ButtonStates::ButtonFSM",
+              "ShouldCheckHovering": true,
+              "State": "Idle",
+              "TouchId": 0,
+              "TouchIsInside": false,
+              "MouseIsInside": false,
+              "Index": 0
+            }
+          ],
+          "content": {
+            "LeftPadding": 16,
+            "RightPadding": 16,
+            "PressedLabelOffsetY": 10,
+            "BottomPadding": 32,
+            "TopPadding": 16,
+            "HoveredFadeOutDuration": 0.25
+          },
+          "childrenContent": {
+            "Hovered": {
+              "bottomMargin": 32,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Hovered.png",
+              "tiled": true,
+              "topMargin": 16,
+              "width": 256
+            },
+            "Idle": {
+              "bottomMargin": 32,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Idle.png",
+              "tiled": true,
+              "topMargin": 16,
+              "width": 256
+            },
+            "Label": {
+              "bold": false,
+              "italic": false,
+              "smoothed": true,
+              "underlined": false,
+              "string": "Level 1",
+              "font": "",
+              "textAlignment": "center",
+              "characterSize": 60,
+              "color": {
+                "b": 0,
+                "g": 0,
+                "r": 0
+              }
+            },
+            "Pressed": {
+              "bottomMargin": 16,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Pressed.png",
+              "tiled": true,
+              "topMargin": 32,
+              "width": 256
+            }
+          }
+        },
+        {
+          "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
+          "name": "Level_2",
+          "tags": "",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "ButtonFSM",
+              "type": "ButtonStates::ButtonFSM",
+              "ShouldCheckHovering": true,
+              "State": "Idle",
+              "TouchId": 0,
+              "TouchIsInside": false,
+              "MouseIsInside": false,
+              "Index": 0
+            }
+          ],
+          "content": {
+            "LeftPadding": 16,
+            "RightPadding": 16,
+            "PressedLabelOffsetY": 10,
+            "BottomPadding": 32,
+            "TopPadding": 16,
+            "HoveredFadeOutDuration": 0.25
+          },
+          "childrenContent": {
+            "Hovered": {
+              "bottomMargin": 32,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Hovered.png",
+              "tiled": true,
+              "topMargin": 16,
+              "width": 256
+            },
+            "Idle": {
+              "bottomMargin": 32,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Idle.png",
+              "tiled": true,
+              "topMargin": 16,
+              "width": 256
+            },
+            "Label": {
+              "bold": false,
+              "italic": false,
+              "smoothed": true,
+              "underlined": false,
+              "string": "Level 2",
+              "font": "",
+              "textAlignment": "center",
+              "characterSize": 60,
+              "color": {
+                "b": 0,
+                "g": 0,
+                "r": 0
+              }
+            },
+            "Pressed": {
+              "bottomMargin": 16,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Pressed.png",
+              "tiled": true,
+              "topMargin": 32,
+              "width": 256
+            }
+          }
+        },
+        {
+          "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
+          "name": "Level_3",
+          "tags": "",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "ButtonFSM",
+              "type": "ButtonStates::ButtonFSM",
+              "ShouldCheckHovering": true,
+              "State": "Idle",
+              "TouchId": 0,
+              "TouchIsInside": false,
+              "MouseIsInside": false,
+              "Index": 0
+            }
+          ],
+          "content": {
+            "LeftPadding": 16,
+            "RightPadding": 16,
+            "PressedLabelOffsetY": 10,
+            "BottomPadding": 32,
+            "TopPadding": 16,
+            "HoveredFadeOutDuration": 0.25
+          },
+          "childrenContent": {
+            "Hovered": {
+              "bottomMargin": 32,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Hovered.png",
+              "tiled": true,
+              "topMargin": 16,
+              "width": 256
+            },
+            "Idle": {
+              "bottomMargin": 32,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Idle.png",
+              "tiled": true,
+              "topMargin": 16,
+              "width": 256
+            },
+            "Label": {
+              "bold": false,
+              "italic": false,
+              "smoothed": true,
+              "underlined": false,
+              "string": "Level 3",
+              "font": "",
+              "textAlignment": "center",
+              "characterSize": 60,
+              "color": {
+                "b": 0,
+                "g": 0,
+                "r": 0
+              }
+            },
+            "Pressed": {
+              "bottomMargin": 16,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Pressed.png",
+              "tiled": true,
+              "topMargin": 32,
+              "width": 256
+            }
+          }
+        },
+        {
+          "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
+          "name": "Level_4",
+          "tags": "",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "ButtonFSM",
+              "type": "ButtonStates::ButtonFSM",
+              "ShouldCheckHovering": true,
+              "State": "Idle",
+              "TouchId": 0,
+              "TouchIsInside": false,
+              "MouseIsInside": false,
+              "Index": 0
+            }
+          ],
+          "content": {
+            "LeftPadding": 16,
+            "RightPadding": 16,
+            "PressedLabelOffsetY": 10,
+            "BottomPadding": 32,
+            "TopPadding": 16,
+            "HoveredFadeOutDuration": 0.25
+          },
+          "childrenContent": {
+            "Hovered": {
+              "bottomMargin": 32,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Hovered.png",
+              "tiled": true,
+              "topMargin": 16,
+              "width": 256
+            },
+            "Idle": {
+              "bottomMargin": 32,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Idle.png",
+              "tiled": true,
+              "topMargin": 16,
+              "width": 256
+            },
+            "Label": {
+              "bold": false,
+              "italic": false,
+              "smoothed": true,
+              "underlined": false,
+              "string": "Level 4",
+              "font": "",
+              "textAlignment": "center",
+              "characterSize": 60,
+              "color": {
+                "b": 0,
+                "g": 0,
+                "r": 0
+              }
+            },
+            "Pressed": {
+              "bottomMargin": 16,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Pressed.png",
+              "tiled": true,
+              "topMargin": 32,
+              "width": 256
+            }
+          }
+        },
+        {
+          "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
+          "name": "Back",
+          "tags": "",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "ButtonFSM",
+              "type": "ButtonStates::ButtonFSM",
+              "ShouldCheckHovering": true,
+              "State": "Idle",
+              "TouchId": 0,
+              "TouchIsInside": false,
+              "MouseIsInside": false,
+              "Index": 0
+            }
+          ],
+          "content": {
+            "LeftPadding": 16,
+            "RightPadding": 16,
+            "PressedLabelOffsetY": 10,
+            "BottomPadding": 32,
+            "TopPadding": 16,
+            "HoveredFadeOutDuration": 0.25
+          },
+          "childrenContent": {
+            "Hovered": {
+              "bottomMargin": 32,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Hovered.png",
+              "tiled": true,
+              "topMargin": 16,
+              "width": 256
+            },
+            "Idle": {
+              "bottomMargin": 32,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Idle.png",
+              "tiled": true,
+              "topMargin": 16,
+              "width": 256
+            },
+            "Label": {
+              "bold": false,
+              "italic": false,
+              "smoothed": true,
+              "underlined": false,
+              "string": "Back",
+              "font": "",
+              "textAlignment": "center",
+              "characterSize": 60,
+              "color": {
+                "b": 0,
+                "g": 0,
+                "r": 0
+              }
+            },
+            "Pressed": {
+              "bottomMargin": 16,
+              "height": 106,
+              "leftMargin": 16,
+              "rightMargin": 16,
+              "texture": "Yellow Button_Pressed.png",
+              "tiled": true,
+              "topMargin": 32,
+              "width": 256
+            }
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ButtonStates::ButtonFSM::IsClicked"
+              },
+              "parameters": [
+                "Level_1",
+                "ButtonFSM",
+                ""
+              ]
+            }
+          ],
+          "actions": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ButtonStates::ButtonFSM::IsClicked"
+              },
+              "parameters": [
+                "Level_2",
+                "ButtonFSM",
+                ""
+              ]
+            }
+          ],
+          "actions": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ButtonStates::ButtonFSM::IsClicked"
+              },
+              "parameters": [
+                "Level_3",
+                "ButtonFSM",
+                ""
+              ]
+            }
+          ],
+          "actions": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ButtonStates::ButtonFSM::IsClicked"
+              },
+              "parameters": [
+                "Level_4",
+                "ButtonFSM",
+                ""
+              ]
+            }
+          ],
+          "actions": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ButtonStates::ButtonFSM::IsClicked"
+              },
+              "parameters": [
+                "Back",
+                "ButtonFSM",
+                ""
+              ]
+            }
+          ],
+          "actions": []
+        }
+      ],
       "layers": [
         {
           "ambientLightColorB": 200,
@@ -5687,7 +6367,12 @@
           "effects": []
         }
       ],
-      "behaviorsSharedData": []
+      "behaviorsSharedData": [
+        {
+          "name": "ButtonFSM",
+          "type": "ButtonStates::ButtonFSM"
+        }
+      ]
     },
     {
       "b": 142,
@@ -70071,6 +70756,1216 @@
   ],
   "externalEvents": [],
   "eventsFunctionsExtensions": [
+    {
+      "author": "",
+      "category": "User interface",
+      "extensionNamespace": "",
+      "fullName": "Button States",
+      "helpPath": "/objects/button",
+      "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWdlc3R1cmUtdGFwLWJ1dHRvbiIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik0xMyA1QzE1LjIxIDUgMTcgNi43OSAxNyA5QzE3IDEwLjUgMTYuMiAxMS43NyAxNSAxMi40NlYxMS4yNEMxNS42MSAxMC42OSAxNiA5Ljg5IDE2IDlDMTYgNy4zNCAxNC42NiA2IDEzIDZTMTAgNy4zNCAxMCA5QzEwIDkuODkgMTAuMzkgMTAuNjkgMTEgMTEuMjRWMTIuNDZDOS44IDExLjc3IDkgMTAuNSA5IDlDOSA2Ljc5IDEwLjc5IDUgMTMgNU0yMCAyMC41QzE5Ljk3IDIxLjMyIDE5LjMyIDIxLjk3IDE4LjUgMjJIMTNDMTIuNjIgMjIgMTIuMjYgMjEuODUgMTIgMjEuNTdMOCAxNy4zN0w4Ljc0IDE2LjZDOC45MyAxNi4zOSA5LjIgMTYuMjggOS41IDE2LjI4SDkuN0wxMiAxOFY5QzEyIDguNDUgMTIuNDUgOCAxMyA4UzE0IDguNDUgMTQgOVYxMy40N0wxNS4yMSAxMy42TDE5LjE1IDE1Ljc5QzE5LjY4IDE2LjAzIDIwIDE2LjU2IDIwIDE3LjE0VjIwLjVNMjAgMkg0QzIuOSAyIDIgMi45IDIgNFYxMkMyIDEzLjExIDIuOSAxNCA0IDE0SDhWMTJMNCAxMkw0IDRIMjBMMjAgMTJIMThWMTRIMjBWMTMuOTZMMjAuMDQgMTRDMjEuMTMgMTQgMjIgMTMuMDkgMjIgMTJWNEMyMiAyLjkgMjEuMTEgMiAyMCAyWiIgLz48L3N2Zz4=",
+      "name": "ButtonStates",
+      "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/753a9a794bd885058159b7509f06f5a8f67f72decfccb9a1b0efee26f41c3c4c_gesture-tap-button.svg",
+      "shortDescription": "Use any object as a button.",
+      "version": "1.0.0",
+      "description": [
+        "Tracks player interaction with an object, including:",
+        "- hovered",
+        "- pressed",
+        "- clicked"
+      ],
+      "origin": {
+        "identifier": "ButtonStates",
+        "name": "gdevelop-extension-store"
+      },
+      "tags": [
+        "ui",
+        "button",
+        "fsm"
+      ],
+      "authorIds": [
+        "IWykYNRvhCZBN3vEgKEbBPOR3Oc2"
+      ],
+      "dependencies": [],
+      "eventsFunctions": [],
+      "eventsBasedBehaviors": [
+        {
+          "description": "Use objects as buttons.",
+          "fullName": "Button states",
+          "name": "ButtonFSM",
+          "objectType": "",
+          "eventsFunctions": [
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "doStepPostEvents",
+              "sentence": "",
+              "events": [
+                {
+                  "colorB": 228,
+                  "colorG": 176,
+                  "colorR": 74,
+                  "creationTime": 0,
+                  "name": "Finite state machine",
+                  "source": "",
+                  "type": "BuiltinCommonInstructions::Group",
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Comment",
+                      "color": {
+                        "b": 109,
+                        "g": 230,
+                        "r": 255,
+                        "textB": 0,
+                        "textG": 0,
+                        "textR": 0
+                      },
+                      "comment": "The \"Validated\" state only last one frame."
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "ButtonStates::ButtonFSM::PropertyState"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Behavior",
+                            "=",
+                            "\"Validated\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "ButtonStates::ButtonFSM::SetPropertyState"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Behavior",
+                            "=",
+                            "\"Idle\""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "name": "Check position",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Comment",
+                          "color": {
+                            "b": 109,
+                            "g": 230,
+                            "r": 255,
+                            "textB": 0,
+                            "textG": 0,
+                            "textR": 0
+                          },
+                          "comment": "Make sure the cursor position is only checked once per frame."
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::SetPropertyMouseIsInside"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior",
+                                "no"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::PropertyShouldCheckHovering"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "CollisionPoint"
+                              },
+                              "parameters": [
+                                "Object",
+                                "MouseOnlyCursorX(Object.Layer(), 0)",
+                                "MouseOnlyCursorY(Object.Layer(), 0)"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::SetPropertyMouseIsInside"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior",
+                                "yes"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Comment",
+                          "color": {
+                            "b": 109,
+                            "g": 230,
+                            "r": 255,
+                            "textB": 0,
+                            "textG": 0,
+                            "textR": 0
+                          },
+                          "comment": "Touches are always pressed, so ShouldCheckHovering doesn't matter."
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::SetPropertyTouchIsInside"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior",
+                                "no"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::PropertyTouchId"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior",
+                                "!=",
+                                "0"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "CollisionPoint"
+                              },
+                              "parameters": [
+                                "Object",
+                                "TouchX(Object.Behavior::PropertyTouchId(), Object.Layer(), 0)",
+                                "TouchY(Object.Behavior::PropertyTouchId(), Object.Layer(), 0)"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::SetPropertyTouchIsInside"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior",
+                                "yes"
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "parameters": []
+                    },
+                    {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "name": "Handle touch start",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "HasAnyTouchOrMouseStarted"
+                              },
+                              "parameters": [
+                                ""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::SetPropertyIndex"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior",
+                                "=",
+                                "0"
+                              ]
+                            }
+                          ],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Repeat",
+                              "repeatExpression": "StartedTouchOrMouseCount()",
+                              "conditions": [],
+                              "actions": [],
+                              "events": [
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "CollisionPoint"
+                                      },
+                                      "parameters": [
+                                        "Object",
+                                        "TouchX(StartedTouchOrMouseId(Object.Behavior::PropertyIndex()), Object.Layer(), 0)",
+                                        "TouchY(StartedTouchOrMouseId(Object.Behavior::PropertyIndex()), Object.Layer(), 0)"
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "ButtonStates::ButtonFSM::SetPropertyTouchId"
+                                      },
+                                      "parameters": [
+                                        "Object",
+                                        "Behavior",
+                                        "=",
+                                        "StartedTouchOrMouseId(Object.Behavior::PropertyIndex())"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "ButtonStates::ButtonFSM::SetPropertyTouchIsInside"
+                                      },
+                                      "parameters": [
+                                        "Object",
+                                        "Behavior",
+                                        "yes"
+                                      ]
+                                    }
+                                  ],
+                                  "events": [
+                                    {
+                                      "type": "BuiltinCommonInstructions::Standard",
+                                      "conditions": [
+                                        {
+                                          "type": {
+                                            "value": "BuiltinCommonInstructions::Or"
+                                          },
+                                          "parameters": [],
+                                          "subInstructions": [
+                                            {
+                                              "type": {
+                                                "value": "ButtonStates::ButtonFSM::PropertyState"
+                                              },
+                                              "parameters": [
+                                                "Object",
+                                                "Behavior",
+                                                "=",
+                                                "\"Hovered\""
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "ButtonStates::ButtonFSM::PropertyState"
+                                              },
+                                              "parameters": [
+                                                "Object",
+                                                "Behavior",
+                                                "=",
+                                                "\"Idle\""
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "value": "ButtonStates::ButtonFSM::SetPropertyState"
+                                          },
+                                          "parameters": [
+                                            "Object",
+                                            "Behavior",
+                                            "=",
+                                            "\"PressedInside\""
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "ButtonStates::ButtonFSM::SetPropertyIndex"
+                                      },
+                                      "parameters": [
+                                        "Object",
+                                        "Behavior",
+                                        "+",
+                                        "1"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "parameters": []
+                    },
+                    {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "name": "Apply position changes",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "ButtonStates::ButtonFSM::PropertyMouseIsInside"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::PropertyState"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior",
+                                "=",
+                                "\"Hovered\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::SetPropertyState"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior",
+                                "=",
+                                "\"Idle\""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::PropertyMouseIsInside"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::PropertyState"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior",
+                                "=",
+                                "\"Idle\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::SetPropertyState"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior",
+                                "=",
+                                "\"Hovered\""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "ButtonStates::ButtonFSM::PropertyTouchIsInside"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::PropertyState"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior",
+                                "=",
+                                "\"PressedInside\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::SetPropertyState"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior",
+                                "=",
+                                "\"PressedOutside\""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::PropertyTouchIsInside"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::PropertyState"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior",
+                                "=",
+                                "\"PressedOutside\""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::SetPropertyState"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior",
+                                "=",
+                                "\"PressedInside\""
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "parameters": []
+                    },
+                    {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "name": "Handle touch end",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "HasTouchEnded"
+                              },
+                              "parameters": [
+                                "",
+                                "Object.Behavior::PropertyTouchId()"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ButtonStates::ButtonFSM::SetPropertyTouchId"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Behavior",
+                                "=",
+                                "0"
+                              ]
+                            }
+                          ],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "ButtonStates::ButtonFSM::PropertyState"
+                                  },
+                                  "parameters": [
+                                    "Object",
+                                    "Behavior",
+                                    "=",
+                                    "\"PressedInside\""
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "ButtonStates::ButtonFSM::SetPropertyState"
+                                  },
+                                  "parameters": [
+                                    "Object",
+                                    "Behavior",
+                                    "=",
+                                    "\"Validated\""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "inverted": true,
+                                    "value": "ButtonStates::ButtonFSM::PropertyState"
+                                  },
+                                  "parameters": [
+                                    "Object",
+                                    "Behavior",
+                                    "=",
+                                    "\"PressedInside\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "inverted": true,
+                                    "value": "ButtonStates::ButtonFSM::PropertyState"
+                                  },
+                                  "parameters": [
+                                    "Object",
+                                    "Behavior",
+                                    "=",
+                                    "\"Validated\""
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "ButtonStates::ButtonFSM::SetPropertyState"
+                                  },
+                                  "parameters": [
+                                    "Object",
+                                    "Behavior",
+                                    "=",
+                                    "\"Idle\""
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "parameters": []
+                    }
+                  ],
+                  "parameters": []
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ButtonStates::ButtonFSM",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "onDeActivate",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ButtonStates::ButtonFSM::ResetState"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ButtonStates::ButtonFSM",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Reset the state of the button.",
+              "fullName": "Reset state",
+              "functionType": "Action",
+              "name": "ResetState",
+              "private": true,
+              "sentence": "Reset the button state of _PARAM0_",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ButtonStates::ButtonFSM::SetPropertyState"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "\"Idle\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ButtonStates::ButtonFSM::SetPropertyTouchId"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ButtonStates::ButtonFSM",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Check if the button is not used.",
+              "fullName": "Is idle",
+              "functionType": "Condition",
+              "name": "IsIdle",
+              "sentence": "_PARAM0_ is idle",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ButtonStates::ButtonFSM::PropertyState"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "\"Idle\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ButtonStates::ButtonFSM",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Check if the button was just clicked.",
+              "fullName": "Is clicked",
+              "functionType": "Condition",
+              "name": "IsClicked",
+              "sentence": "_PARAM0_ is clicked",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ButtonStates::ButtonFSM::PropertyState"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "\"Validated\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ButtonStates::ButtonFSM",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Check if the cursor is hovered over the button.",
+              "fullName": "Is hovered",
+              "functionType": "Condition",
+              "name": "IsHovered",
+              "sentence": "_PARAM0_ is hovered",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ButtonStates::ButtonFSM::PropertyState"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "\"Hovered\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ButtonStates::ButtonFSM",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Check if the button is either hovered or pressed but not hovered.",
+              "fullName": "Is focused",
+              "functionType": "Condition",
+              "name": "IsFocused",
+              "sentence": "_PARAM0_ is focused",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ButtonStates::ButtonFSM::PropertyState"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "\"Hovered\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ButtonStates::ButtonFSM::PropertyState"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "\"PressedOutside\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ButtonStates::ButtonFSM",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Check if the button is currently being pressed with mouse or touch.",
+              "fullName": "Is pressed",
+              "functionType": "Condition",
+              "name": "IsPressed",
+              "sentence": "_PARAM0_ is pressed",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ButtonStates::ButtonFSM::PropertyState"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "\"PressedInside\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ButtonStates::ButtonFSM",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Check if the button is currently being pressed outside with mouse or touch.",
+              "fullName": "Is held outside",
+              "functionType": "Condition",
+              "name": "IsPressedOutside",
+              "sentence": "_PARAM0_ is held outside",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ButtonStates::ButtonFSM::PropertyState"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "\"PressedOutside\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ButtonStates::ButtonFSM",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "the touch id that is using the button or 0 if none.",
+              "fullName": "Touch id",
+              "functionType": "ExpressionAndCondition",
+              "name": "TouchId",
+              "sentence": "the touch id",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "Object.Behavior::PropertyTouchId()"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ButtonStates::ButtonFSM",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": [
+            {
+              "value": "true",
+              "type": "Boolean",
+              "label": "",
+              "description": "Should check hovering",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "ShouldCheckHovering"
+            },
+            {
+              "value": "Idle",
+              "type": "Choice",
+              "label": "State",
+              "description": "",
+              "group": "",
+              "extraInformation": [
+                "Idle",
+                "Hovered",
+                "PressedInside",
+                "PressedOutside",
+                "Validated"
+              ],
+              "hidden": true,
+              "name": "State"
+            },
+            {
+              "value": "0",
+              "type": "Number",
+              "label": "Touch id",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "TouchId"
+            },
+            {
+              "value": "",
+              "type": "Boolean",
+              "label": "Touch is inside",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "TouchIsInside"
+            },
+            {
+              "value": "",
+              "type": "Boolean",
+              "label": "Mouse is inside",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "MouseIsInside"
+            },
+            {
+              "value": "",
+              "type": "Number",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "Index"
+            }
+          ],
+          "sharedPropertyDescriptors": []
+        }
+      ],
+      "eventsBasedObjects": []
+    },
     {
       "author": "",
       "category": "User interface",
