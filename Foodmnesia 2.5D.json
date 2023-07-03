@@ -6271,7 +6271,18 @@
               ]
             }
           ],
-          "actions": []
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Level 1\"",
+                ""
+              ]
+            }
+          ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -6303,7 +6314,18 @@
               ]
             }
           ],
-          "actions": []
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Level 3\"",
+                ""
+              ]
+            }
+          ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -6319,7 +6341,18 @@
               ]
             }
           ],
-          "actions": []
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Level 4\"",
+                ""
+              ]
+            }
+          ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -6335,7 +6368,18 @@
               ]
             }
           ],
-          "actions": []
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Title\"",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -6377,8 +6421,8 @@
     {
       "b": 142,
       "disableInputWhenNotFocused": true,
-      "mangledName": "Level4",
-      "name": "Level4",
+      "mangledName": "Level_324",
+      "name": "Level 4",
       "r": 45,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
@@ -48998,8 +49042,8 @@
     {
       "b": 142,
       "disableInputWhenNotFocused": true,
-      "mangledName": "Level3",
-      "name": "Level3",
+      "mangledName": "Level_323",
+      "name": "Level 3",
       "r": 45,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
