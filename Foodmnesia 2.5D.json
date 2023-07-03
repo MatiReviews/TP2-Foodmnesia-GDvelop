@@ -6018,6 +6018,50 @@
         "g": 0,
         "r": 0
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "Timer",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Timer",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 50,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "Score_Timer",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "0",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 50,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
     }
   ],
   "objectsGroups": [],
@@ -30016,7 +30060,7 @@
           "angle": 0,
           "customSize": false,
           "height": 0,
-          "layer": "",
+          "layer": "UI",
           "locked": true,
           "name": "DishCont",
           "persistentUuid": "56232df6-8958-4d00-95b0-783832b00cc4",
@@ -30224,7 +30268,7 @@
           "customSize": true,
           "depth": 0,
           "height": 75,
-          "layer": "",
+          "layer": "UI",
           "name": "Heart_1",
           "persistentUuid": "b2f5f12f-5f62-4cba-a150-4cef1d102375",
           "width": 75,
@@ -30240,7 +30284,7 @@
           "customSize": true,
           "depth": 0,
           "height": 75,
-          "layer": "",
+          "layer": "UI",
           "name": "Heart_2",
           "persistentUuid": "5ca92666-4c55-48af-9775-901a0c69f068",
           "width": 75,
@@ -30256,13 +30300,43 @@
           "customSize": true,
           "depth": 0,
           "height": 75,
-          "layer": "",
+          "layer": "UI",
           "name": "Heart_3",
           "persistentUuid": "7bfbd11c-1d8d-45d4-93d8-db48406e2a51",
           "width": 75,
           "x": 975,
           "y": 0,
           "zOrder": 88,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "UI",
+          "name": "Timer",
+          "persistentUuid": "3d7eebe2-d4c4-4e6a-ae24-8a7d45a6cab8",
+          "width": 0,
+          "x": 853,
+          "y": 88,
+          "zOrder": 89,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "UI",
+          "name": "Score_Timer",
+          "persistentUuid": "287ceb94-5ba8-4818-92a5-1c8bd32d4ea1",
+          "width": 0,
+          "x": 1003,
+          "y": 88,
+          "zOrder": 90,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -50478,6 +50552,31 @@
                 "",
                 "\"Orders\""
               ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"GameTimer\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "Score_Timer",
+                "=",
+                "ToString(round(TimerElapsedTime(\"GameTimer\")))"
+              ]
             }
           ]
         },
@@ -51086,6 +51185,15 @@
                 "Plato",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"GameTimer\""
+              ]
             }
           ]
         },
@@ -51426,6 +51534,15 @@
               "parameters": [
                 "Plato",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"GameTimer\""
               ]
             }
           ]
@@ -51799,6 +51916,15 @@
                 "Plato",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"GameTimer\""
+              ]
             }
           ]
         },
@@ -52116,6 +52242,15 @@
                 "Plato",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"GameTimer\""
+              ]
             }
           ]
         },
@@ -52432,6 +52567,15 @@
               "parameters": [
                 "Plato",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PauseTimer"
+              },
+              "parameters": [
+                "",
+                "\"GameTimer\""
               ]
             }
           ]
